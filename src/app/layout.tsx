@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.scss";
 import NavbarComp from "@/Components/Navbar";
+import "./globals.scss";
+import { Poppins } from "next/font/google";
+import PrelineScript from "@/Components/PrelineScript";
+
+const poppins = Poppins({ weight: ["500"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <PrelineScript />
+      <body className={poppins.className}>
         <NavbarComp />
         {children}
       </body>
